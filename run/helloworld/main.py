@@ -27,6 +27,13 @@ def hello_world():
     return f"Hello {name}!"
 
 
+@app.route("/region")
+def hello_region():
+    """Example Hello World route."""
+    name = os.environ.get("REGION", "Italy")
+    return f"Hello {name}!"
+
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
 # [END cloudrun_helloworld_service]
